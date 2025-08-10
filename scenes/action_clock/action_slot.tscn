@@ -1,14 +1,16 @@
 [gd_scene load_steps=5 format=3 uid="uid://b1room31ld61s"]
 
 [ext_resource type="Theme" uid="uid://x5n4mo3f5alh" path="res://themes/action_clock_theme.tres" id="1_oh2w0"]
-[ext_resource type="Script" uid="uid://bj7bnuit4yi28" path="res://scenes/action_clock/action_slot.gd" id="2_tv1eo"]
+[ext_resource type="Script" uid="uid://bj7bnuit4yi28" path="res://scripts/action_slot.gd" id="2_tv1eo"]
 [ext_resource type="Texture2D" uid="uid://buwbhjux4ngtb" path="res://icon.svg" id="3_rtxsc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aw2ct"]
+bg_color = Color(0, 0, 0, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
+border_color = Color(0, 0, 0.109804, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -16,13 +18,18 @@ corner_radius_bottom_left = 4
 
 [node name="ActionSlot" type="PanelContainer"]
 custom_minimum_size = Vector2(24, 24)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = -1
+anchor_left = 0.006
+anchor_top = 0.011
+anchor_right = 0.006
+anchor_bottom = 0.011
+offset_left = -11.52
+offset_top = -11.88
+offset_right = 12.48
+offset_bottom = 12.12
+pivot_offset = Vector2(12, 12)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme = ExtResource("1_oh2w0")
 theme_override_styles/panel = SubResource("StyleBoxFlat_aw2ct")
 script = ExtResource("2_tv1eo")

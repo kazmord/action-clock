@@ -7,6 +7,8 @@
 [node name="ActionClock" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 script = ExtResource("1_7cset")
 
 [node name="ClockFace" type="TextureRect" parent="."]
