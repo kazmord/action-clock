@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl2c68pddl2no"]
+
+[ext_resource type="Script" uid="uid://cfmn5dfwad5f4" path="res://scripts/action_null.gd" id="1_v6b55"]
+
+[node name="ActionNull" type="Node"]
+script = ExtResource("1_v6b55")
+metadata/_custom_type_script = "uid://cljjq61cf4vnx"
+
+[node name="Icon" type="Sprite2D" parent="."]

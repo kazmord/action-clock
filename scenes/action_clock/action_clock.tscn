@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4gufru0aq7ph"]
+
+[ext_resource type="Script" uid="uid://ctn8w6hduu61b" path="res://scripts/action_clock.gd" id="1_7cset"]
+[ext_resource type="Texture2D" uid="uid://b8h3llirj8oat" path="res://assets/clock/clock_face.png" id="1_t8ob0"]
+[ext_resource type="Texture2D" uid="uid://ceha6dtoet4kv" path="res://assets/clock/clock_hand.png" id="2_7cset"]
+
+[node name="ActionClock" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_7cset")
+
+[node name="ClockFace" type="TextureRect" parent="."]
+layout_mode = 2
+offset_right = 200.0
+offset_bottom = 200.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("1_t8ob0")
+
+[node name="ClockHand" type="TextureRect" parent="."]
+layout_mode = 2
+offset_right = 200.0
+offset_bottom = 200.0
+rotation = 6.28319
+pivot_offset = Vector2(100, 100)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("2_7cset")
+
+[node name="CircleRay" type="RayCast2D" parent="."]
+position = Vector2(101, 101)
+target_position = Vector2(0, -100)
