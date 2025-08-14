@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://b4gufru0aq7ph"]
 
 [ext_resource type="Script" uid="uid://ctn8w6hduu61b" path="res://scripts/action_clock.gd" id="1_7cset"]
-[ext_resource type="Texture2D" uid="uid://b8h3llirj8oat" path="res://assets/clock/clock_face.png" id="1_t8ob0"]
-[ext_resource type="Texture2D" uid="uid://ceha6dtoet4kv" path="res://assets/clock/clock_hand.png" id="2_7cset"]
+[ext_resource type="Texture2D" uid="uid://b8h3llirj8oat" path="res://assets/sprites/clock/clock_face.png" id="1_t8ob0"]
+[ext_resource type="Texture2D" uid="uid://ceha6dtoet4kv" path="res://assets/sprites/clock/clock_hand.png" id="2_7cset"]
 
 [node name="ActionClock" type="Control"]
 layout_mode = 3
