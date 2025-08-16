@@ -1,6 +1,6 @@
 class_name ActionSlot extends PanelContainer
 
-@export var action: Action = load("res://scenes/action_clock/actions/action_null.tscn").instantiate():
+@export var action: Action = load("res://scenes/ui/action_clock/actions/action_null.tscn").instantiate():
 	set(new_action):
 		action = new_action
 		if !action.delete.is_connected(empty_action_slot):
@@ -28,4 +28,4 @@ func replace_action(new_action: Action) -> void:
 	action = new_action
 
 func empty_action_slot() -> void:
-	action = load("res://scenes/action_clock/actions/action_null.tscn").instantiate()
+	action = load("res://scenes/ui/action_clock/actions/action_null.tscn").instantiate()

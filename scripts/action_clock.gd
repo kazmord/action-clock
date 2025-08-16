@@ -12,7 +12,7 @@ var last_slot_done = false
 @onready var clock_hand: TextureRect = $ClockHand
 @onready var circle_ray: RayCast2D = $CircleRay
 
-var action_slot: PackedScene = preload("res://scenes/action_clock/action_slot.tscn")
+var action_slot: PackedScene = preload("res://scenes/ui/action_clock/action_slot.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -71,4 +71,4 @@ func _remove_action_from_next(action: Action) -> void:
 	pass
 
 func _test() -> void:
-	slot_positions[0].replace_action(load("res://scenes/action_clock/actions/action_dash.tscn").instantiate())
+	slot_positions[0].replace_action(load("res://scenes/ui/action_clock/actions/action_dash.tscn").instantiate())
