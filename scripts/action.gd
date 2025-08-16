@@ -17,5 +17,5 @@ enum ActionSignalIds {
 func do_action() -> void:
 	printerr("BLANK ACTION - polymorph this!")
 
-func decrement_uses() -> void:
-	uses_remaining = uses_remaining - 1
+func decrement_uses(amount = 1) -> void:
+	uses_remaining = uses_remaining - amount

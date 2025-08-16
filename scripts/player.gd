@@ -1,6 +1,11 @@
 class_name Player extends CharacterBody2D
 
+@onready var health_component: HealthComponent = $HealthComponent
+
 const SPEED = 200.0
+
+func _ready() -> void:
+	health_component.hp_depleted.connect(_die)
 
 func _physics_process(delta: float) -> void:
 
@@ -14,3 +19,6 @@ func _physics_process(delta: float) -> void:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 
 	move_and_slide()
+
+func _die() -> void:
+	print('aaaa') #TODO: proper death handling
