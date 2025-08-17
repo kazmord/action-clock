@@ -5,7 +5,7 @@ class_name Player extends CharacterBody2D
 const SPEED = 200.0
 
 func _ready() -> void:
-	health_component.hp_depleted.connect(_die)
+	health_component.hp_depleted.connect(die)
 
 func _physics_process(delta: float) -> void:
 
@@ -20,5 +20,5 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-func _die() -> void:
+func die() -> void:
 	print('aaaa') #TODO: proper death handling

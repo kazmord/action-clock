@@ -7,6 +7,8 @@ class_name HealthComponent extends Node
 			current_hp = max_hp
 @export var current_hp := max_hp:
 	set(new_cur):
+		current_hp = new_cur
+		print(current_hp)
 		if current_hp < 1:
 			hp_depleted.emit()
 

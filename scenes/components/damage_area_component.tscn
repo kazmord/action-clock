@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://nske4gm4at60"]
+
+[ext_resource type="Script" uid="uid://wt8y334fyfdl" path="res://scripts/damage_area_component.gd" id="1_r75mj"]
+
+[node name="DamageAreaComponent" type="Area2D"]
+collision_mask = 3
+script = ExtResource("1_r75mj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

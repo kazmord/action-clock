@@ -1,17 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://cundvuu6y3pbu"]
+[gd_scene load_steps=7 format=3 uid="uid://cundvuu6y3pbu"]
 
 [ext_resource type="Script" uid="uid://u8s8i0umx4an" path="res://scripts/enemy.gd" id="1_1ebcy"]
 [ext_resource type="PackedScene" uid="uid://dkgmjsvh14cop" path="res://scenes/components/nav_component.tscn" id="2_wk5vr"]
 [ext_resource type="PackedScene" uid="uid://b32lx7ohlud8d" path="res://scenes/components/health_component.tscn" id="3_kc8xr"]
+[ext_resource type="PackedScene" uid="uid://nske4gm4at60" path="res://scenes/components/damage_area_component.tscn" id="4_tj0q7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ebcy"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d7yn8"]
 radius = 8.0
 
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("nav_2d", "health_component")]
 collision_mask = 3
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_1ebcy")
+nav_2d = NodePath("Nav")
+health_component = NodePath("HealthComponent")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -8.0
@@ -27,3 +33,9 @@ shape = SubResource("CircleShape2D_1ebcy")
 parent = NodePath("..")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_kc8xr")]
+
+[node name="DamageAreaComponent" parent="." instance=ExtResource("4_tj0q7")]
+hurts_player = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageAreaComponent"]
+shape = SubResource("CircleShape2D_d7yn8")

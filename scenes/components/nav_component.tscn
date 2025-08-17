@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dkgmjsvh14cop"]
 
-[ext_resource type="Script" uid="uid://8kc8jiuipg0t" path="res://scenes/components/nav_component.gd" id="1_xphd5"]
+[ext_resource type="Script" uid="uid://8kc8jiuipg0t" path="res://scripts/nav_component.gd" id="1_xphd5"]
 
 [node name="NavComponent" type="NavigationAgent2D"]
 path_postprocessing = 1
