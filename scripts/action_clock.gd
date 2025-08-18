@@ -71,4 +71,4 @@ func _remove_action_from_next(action: Action) -> void:
 	pass
 
 func _test() -> void:
-	slot_positions[0].replace_action(load("res://scenes/ui/action_clock/actions/action_dash.tscn").instantiate())
+	slot_positions[0].replace_action(load("res://scenes/ui/action_clock/actions/action_shot.tscn").instantiate())

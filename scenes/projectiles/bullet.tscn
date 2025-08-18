@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cm2ad0mko35pf"]
+
+[ext_resource type="Script" uid="uid://doptyn50jtd7p" path="res://scripts/bullet.gd" id="1_48g2p"]
+[ext_resource type="Texture2D" uid="uid://bnohhdregcna6" path="res://assets/action_icons/action_shot_icon.png" id="2_k5ji7"]
+[ext_resource type="PackedScene" uid="uid://mstv3oltnmgt" path="res://scenes/components/off_screen_despawn_component.tscn" id="3_k5ji7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2bxc"]
+size = Vector2(14, 8)
+
+[node name="Bullet" type="Area2D"]
+collision_mask = 5
+script = ExtResource("1_48g2p")
+hurts_enemies = true
+destroyed_on_environment_collision = true
+metadata/_custom_type_script = "uid://wt8y334fyfdl"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_k5ji7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_i2bxc")
+
+[node name="OffScreenDespawnComponent" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("3_k5ji7")]
+position = Vector2(1.19209e-07, 2.38419e-07)
+parent = NodePath("..")

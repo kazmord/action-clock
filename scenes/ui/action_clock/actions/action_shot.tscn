@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlncoxyet20nf"]
+
+[ext_resource type="Script" uid="uid://x1vnf3bnuy42" path="res://scripts/action_shot.gd" id="1_4uvgb"]
+[ext_resource type="Texture2D" uid="uid://bnohhdregcna6" path="res://assets/action_icons/action_shot_icon.png" id="2_ilwqg"]
+
+[node name="ActionShot" type="Node"]
+script = ExtResource("1_4uvgb")
+icon = ExtResource("2_ilwqg")
+uses_remaining = 5
+metadata/_custom_type_script = "uid://cljjq61cf4vnx"

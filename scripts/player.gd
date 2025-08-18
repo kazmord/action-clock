@@ -1,11 +1,18 @@
 class_name Player extends CharacterBody2D
 
+signal shoot_projectile(p: Node2D)
+
+@export var world: World
+
 @onready var health_component: HealthComponent = $HealthComponent
+@onready var shot_action_component: ShotActionComponent = $ShotActionComponent
 
 const SPEED = 200.0
 
 func _ready() -> void:
+	ClkMsg.player_action.connect(do_action)
 	health_component.hp_depleted.connect(die)
+	shot_action_component.shoot_projectile.connect(shoot)
 
 func _physics_process(delta: float) -> void:
 
@@ -22,3 +29,16 @@ func _physics_process(delta: float) -> void:
 
 func die() -> void:
 	print('aaaa') #TODO: proper death handling
+
+func shoot(p: Node2D) -> void:
+	print("player")
+	shoot_projectile.emit(p)
+
+func shot_action(p: PackedScene, pos: Vector2, angle: float) -> void:
+	shot_action_component.shoot(p, pos, angle)
+	
+func do_action(act: ClkMsg.Actions):
+	print("do action")
+	match(act):
+		ClkMsg.Actions.SHOT:
+			shot_action(load("res://scenes/projectiles/bullet.tscn"), global_position, rotation)

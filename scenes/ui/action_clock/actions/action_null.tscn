@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bl2c68pddl2no"]
 
 [ext_resource type="Script" uid="uid://cfmn5dfwad5f4" path="res://scripts/action_null.gd" id="1_v6b55"]
-[ext_resource type="Texture2D" uid="uid://bvm01c1ak0sif" path="res://assets/sprites/action_null_icon.png" id="2_8s2jj"]
+[ext_resource type="Texture2D" uid="uid://bvm01c1ak0sif" path="res://assets/action_icons/action_null_icon.png" id="2_8s2jj"]
 
 [node name="ActionNull" type="Node"]
 script = ExtResource("1_v6b55")

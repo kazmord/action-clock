@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://mstv3oltnmgt"]
+
+[ext_resource type="Script" uid="uid://duecullljqgwk" path="res://scripts/off_screen_despawn_component.gd" id="1_nxl68"]
+
+[node name="OffScreenDespawnComponent" type="VisibleOnScreenNotifier2D"]
+script = ExtResource("1_nxl68")
+
+[node name="DespawnTimer" type="Timer" parent="."]
+
+[connection signal="screen_entered" from="." to="." method="_on_screen_entered"]
+[connection signal="screen_exited" from="." to="." method="_on_screen_exited"]
+[connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]
