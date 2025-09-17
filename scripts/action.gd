@@ -9,11 +9,6 @@ signal delete
 			print("OUT OF USES! (" + str(uses_remaining) + ")")
 			delete.emit()
 
-enum ActionSignalIds {
-	DASH,
-	BASIC_SHOT
-}
-
 func do_action() -> void:
 	printerr("BLANK ACTION - polymorph this!")
 

@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://c1l4ngbt7ginc"]
+
+[ext_resource type="Theme" uid="uid://x5n4mo3f5alh" path="res://themes/action_clock_theme.tres" id="1_1qh70"]
+[ext_resource type="Texture2D" uid="uid://bnohhdregcna6" path="res://assets/action_icons/action_shot_icon.png" id="2_4dkfv"]
+[ext_resource type="Script" uid="uid://dbdq67d0pxcbg" path="res://scripts/action_inventory_item.gd" id="2_k2eb1"]
+[ext_resource type="FontFile" uid="uid://bhri6iyv0hq7x" path="res://assets/fonts/PixelOperator8.ttf" id="3_k2eb1"]
+[ext_resource type="Script" uid="uid://dltsr4prt3vfa" path="res://scripts/action_inventory_item_data.gd" id="3_ucvs5"]
+
+[sub_resource type="Resource" id="Resource_30yg6"]
+script = ExtResource("3_ucvs5")
+name = "Default"
+action = 1
+metadata/_custom_type_script = "uid://dltsr4prt3vfa"
+
+[node name="ActionInventoryItem" type="PanelContainer"]
+custom_minimum_size = Vector2(200, 48)
+theme = ExtResource("1_1qh70")
+script = ExtResource("2_k2eb1")
+data = SubResource("Resource_30yg6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_4dkfv")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+theme_override_fonts/font = ExtResource("3_k2eb1")
+theme_override_font_sizes/font_size = 24
+text = "lllllll"
+uppercase = true

@@ -14,6 +14,11 @@ var last_slot_done = false
 
 var action_slot: PackedScene = preload("res://scenes/ui/action_clock/action_slot.tscn")
 
+var action_map = {
+	ClkMsg.Actions.DASH: load("res://scenes/ui/action_clock/actions/action_dash.tscn"),
+	ClkMsg.Actions.SHOT: load("res://scenes/ui/action_clock/actions/action_shot.tscn")
+}
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_place_slots(slot_count)
@@ -55,20 +60,26 @@ func _place_slots(slot_number: int) -> void:
 	slot_positions = slot_array
 	move_child(clock_hand, -1)
 
+func add_new_action_to_next(action_id: ClkMsg.Actions) -> void:
+	_add_action_to_next(_new_action(action_id))
+
 func _increment_array_index_wrapping(arr: Array, current_index: int) -> int:
 	return (current_index + 1) % arr.size()
 
 func _add_action_to_slot(action: Action, slot_index) -> void:
-	pass # call function in slot to add action
+	slot_positions[slot_index].replace_action(action)
 	
 func _remove_action_from_slot(slot_index) -> void:
 	pass
 	
 func _add_action_to_next(action: Action) -> void:
-	pass
+	_add_action_to_slot(action, next_slot)
 	
-func _remove_action_from_next(action: Action) -> void:
+func _remove_action_from_next() -> void:
 	pass
+
+func _new_action(id: ClkMsg.Actions) -> Action:
+	return action_map[id].instantiate()
 
 func _test() -> void:
 	slot_positions[0].replace_action(load("res://scenes/ui/action_clock/actions/action_shot.tscn").instantiate())

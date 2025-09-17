@@ -1,0 +1,18 @@
+HOW TO ADD A NEW ACTION TYPE
+
+1.	In ClkMsg autoload: add a new entry to the Actions enum
+2.	Create a new scene that derives from the Action Class.
+	Set data accordingly.
+	Use the following structure for basic functionality:
+		class_name Action[NEW_ACTION_TYPE] extends Action
+
+		signal action_msg(a: ClkMsg.Actions)
+
+		func _init() -> void:
+			action_msg.connect(ClkMsg.player_action_request)
+			print(action_msg.is_connected(ClkMsg.player_action_request))
+
+		func do_action():
+			action_msg.emit(ClkMsg.Actions.[NEW_ACTION_TYPE])
+			decrement_uses()
+3.	In player: within do_action, map the new enum to the desired functionality

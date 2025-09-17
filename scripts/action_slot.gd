@@ -5,7 +5,6 @@ class_name ActionSlot extends PanelContainer
 		action = new_action
 		if !action.delete.is_connected(empty_action_slot):
 			action.delete.connect(empty_action_slot)
-		print(action.icon)
 		icon.texture = action.icon
 @export var clock_rotation: float
 

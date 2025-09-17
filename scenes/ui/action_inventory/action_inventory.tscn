@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://beg0us5hxcdb5"]
+
+[ext_resource type="Script" uid="uid://btn7ntxgybxlm" path="res://scripts/action_inventory.gd" id="1_37khw"]
+
+[node name="ActionInventory" type="VBoxContainer"]
+script = ExtResource("1_37khw")
+
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]

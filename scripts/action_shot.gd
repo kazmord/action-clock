@@ -7,6 +7,5 @@ func _init() -> void:
 	print(action_msg.is_connected(ClkMsg.player_action_request))
 
 func do_action():
-	print("action shot")
 	action_msg.emit(ClkMsg.Actions.SHOT)
 	decrement_uses()

@@ -1,9 +1,8 @@
 class_name Bullet extends DamageAreaComponent
 
-@export var speed = 50.0
+@export var speed := 30.0
 
-var direction = Vector2(1,0).rotated(rotation)
+@onready var direction = Vector2(1,0).rotated(rotation)
 
 func _physics_process(delta: float):
-	position = position + direction * speed
-	print('I AM HERE!')
+	position = position + direction * speed * delta

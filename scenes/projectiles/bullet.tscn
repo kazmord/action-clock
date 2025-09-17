@@ -8,8 +8,9 @@
 size = Vector2(14, 8)
 
 [node name="Bullet" type="Area2D"]
-collision_mask = 5
+collision_mask = 12
 script = ExtResource("1_48g2p")
+speed = 100.0
 hurts_enemies = true
 destroyed_on_environment_collision = true
 metadata/_custom_type_script = "uid://wt8y334fyfdl"
@@ -23,3 +24,5 @@ shape = SubResource("RectangleShape2D_i2bxc")
 [node name="OffScreenDespawnComponent" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("3_k5ji7")]
 position = Vector2(1.19209e-07, 2.38419e-07)
 parent = NodePath("..")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

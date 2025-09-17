@@ -11,7 +11,6 @@ func _process(delta: float) -> void:
 	pass
 
 func spawn_projectile(p: Node2D) -> void:
-	print("world")
 	add_child(p)
 
 func _validate_necessary_nodes() -> void:
